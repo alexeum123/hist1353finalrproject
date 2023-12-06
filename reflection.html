@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIST 1353 Final - Alex Eum</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+    <section id="portfolio">
+
+
+        <div class="project">
+            <p class="hidden-caption">
+                Today, Latin America is predominantly Catholic, a testament to the lasting impact of these colonial
+                endeavors. However, this religious homogenization came at a significant cost to indigenous cultures and
+                religions, many of which were suppressed or completely eradicated. In recent years, there has been a
+                growing movement within the Catholic Church to reflect on its historical role in the colonization of the
+                Americas. Apologies for past injustices and efforts towards reconciliation with indigenous peoples
+                represent a significant shift in the Church’s engagement with its colonial legacy. A notable example of
+                this reflective process is the apology issued by the Jesuit Order for its role in the oppression of
+                indigenous peoples during the colonial period. This apology, while symbolic, represents an important
+                acknowledgment of the past and a step towards healing historical wounds.
+            </p>
+            <img class="project__image"
+                src="./images/reflection.jpeg" />
+            <p>Catholic Reflection</p>
+            <h3 class="grid__title">Modern Reflection</h3>
+            <div class="grid__overlay">
+                <button class="viewbutton">view more</button>
+            </div>
+        </div>
+
+
+        <div class="project">
+            <p class="hidden-caption">The Filipino embrace of Catholic rituals, such as godparentage and beliefs about
+                the souls of the dead, reflects the deep integration of Catholicism into their culture. These practices,
+                including the tradition of waiting for deceased souls with candles, illustrate the syncretism of
+                Catholic and indigenous beliefs. This fusion created a distinct religious landscape, where Catholic
+                rituals were adapted to fit local customs and worldview. The enduring popularity of these practices
+                demonstrates the depth of Catholic influence in the Philippines, even as it interacted with and adapted
+                to pre-existing cultural traditions.</p>
+            <img class="project__image"
+                src="./images/filipino.jpeg" />
+            <p>Catholic Reflection</p>
+            <h3 class="grid__title">Filipino Embrace of Catholic Rituals</h3>
+            <div class="grid__overlay">
+                <button class="viewbutton">view more</button>
+            </div>
+        </div>
+
+
+        <div class="project">
+            <p class="hidden-caption">
+                The formation of black communities in the context of slavery was significantly influenced by Catholic
+                practices, particularly godparentage or baptismal sponsorship. In the brutal world of slavery, these
+                practices provided a semblance of stability and social structure. Godparentage established complex
+                networks of support, creating bonds akin to family ties. These relationships often transcended
+                biological connections, offering emotional, spiritual, and sometimes material support. This aspect of
+                Catholic practice played a crucial role in community formation, identity, and resistance to the
+                dehumanizing effects of slavery.
+            </p>
+            <img class="project__image"
+                src="./images/blackculture.jpeg" />
+            <p>Catholic Reflection</p>
+            <h3 class="grid__title">Black Community Formation/Family Ties </h3>
+            <div class="grid__overlay">
+                <button class="viewbutton">view more</button>
+            </div>
+        </div>
+
+
+        <div class="project">
+            <p class="hidden-caption">Figures like Tupac Amaru and Tupac Katari exemplify the complex loyalties of
+                Creoles in the colonial era. Despite their revolutionary activities, they often proclaimed their
+                allegiance to the Spanish king and the Catholic religion. This dual loyalty reflects the intricate
+                relationship between colonial subjects and the imperial power, where political dissent coexisted with a
+                commitment to the prevailing religious and monarchical order.</p>
+            <img class="project__image"
+                src="./images/loyalty.webp" />
+            <p>Catholic Reflection</p>
+            <h3 class="grid__title">Creole Loyalty</h3>
+            <div class="grid__overlay">
+                <button class="viewbutton">view more</button>
+            </div>
+        </div>
+
+
+        <div class="overlay">
+            <div class="overlay__inner">
+                <button class="close">close X</button>
+                <img>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const buttons = document.querySelectorAll('.project');
+        const overlay = document.querySelector('.overlay');
+        const overlayInner = document.querySelector('.overlay__inner');
+        function open(e) {
+            const project = e.currentTarget;
+            const imgSrc = project.querySelector('img').src;
+            const caption = project.querySelector('.hidden-caption').innerText;
+            overlayInner.innerHTML = `
+    <button class="close">close X</button>
+    <img src="${imgSrc}">
+    <p>${caption}</p>
+  `;
+            overlay.classList.add('open');
+            overlayInner.querySelector('.close').addEventListener('click', close);
+        }
+        function close() {
+            overlay.classList.remove('open');
+        }
+        buttons.forEach(button => button.addEventListener('click', open));
+    </script>
+    <a href="index.html" class="return-home-btn">Return Home</a>
+</body>
+
+</html>
